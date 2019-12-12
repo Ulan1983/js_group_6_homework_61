@@ -1,0 +1,11 @@
+.country_builder {
+	display: flex;
+	margin: 50px auto;
+}
+
+.countries_list {
+	width: 25%;
+	height: 700px;
+	overflow-y: scroll;
+	text-align: left;
+}

@@ -1,9 +1,10 @@
 import React from 'react';
+import './CountriesList.css';
 
-const CountriesList = () => {
+const CountriesList = props => {
 	return (
 		<div>
-			<p>Countries</p>
+			<li className="li_countries">{props.name}</li>
 		</div>
 	);
 };

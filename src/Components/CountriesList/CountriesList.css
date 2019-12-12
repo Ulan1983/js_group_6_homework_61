@@ -1,0 +1,10 @@
+.li_countries {
+	list-style: none;
+	margin: 10px 0;
+	padding: 5px 15px;
+	border-bottom: 1px solid #ccc;
+	cursor: pointer;
+}
+.li_countries:hover {
+	background: deepskyblue;
+}
