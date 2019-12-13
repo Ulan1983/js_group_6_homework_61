@@ -3,8 +3,8 @@ import './CountriesList.css';
 
 const CountriesList = props => {
 	return (
-		<div>
-			<li className="li_countries">{props.name}</li>
+		<div onClick={props.onClick}>
+			<p className="p_countries">{props.name}</p>
 		</div>
 	);
 };

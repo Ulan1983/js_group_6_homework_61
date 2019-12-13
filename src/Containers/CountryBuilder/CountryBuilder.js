@@ -22,6 +22,25 @@ class CountryBuilder extends Component {
 		});
 	}
 
+	getCountryInfo = name => {
+		axios.get('https://restcountries.eu/rest/v2/name/' + name).then(response => {
+			const promises = response.data[0].borders.map(code => {
+				return axios.get('https://restcountries.eu/rest/v2/alpha/' + code);
+			});
+			Promise.all(promises).then(response => {
+				const borderCountries = response.map(country => {
+					return country.data.name;
+				});
+				if (borderCountries.length <= 0) {
+					this.setState({borders: 'This country does not have any borders with another countries'});
+				} else {
+					this.setState({borders: borderCountries.join(', ')})
+				}
+			});
+			this.setState({country: response.data, countryInfoShown: true});
+		})
+	};
+
 	render() {
 		return (
 			<div className="country_builder">
@@ -30,10 +49,20 @@ class CountryBuilder extends Component {
 						<CountriesList
 							key={country.name}
 							name={country.name}
+							onClick={() => this.getCountryInfo(country.name)}
 						/>
 					))}
 				</div>
-				<CountryInfo/>
+				{this.state.country.map(country => (
+					<CountryInfo
+						key={country.name}
+						name={country.name}
+						flag={country.flag}
+						capital={country.capital}
+						population={country.population}
+						borders={this.state.borders}
+					/>
+				))}
 			</div>
 		);
 	}

@@ -1,6 +1,6 @@
 .country_builder {
 	display: flex;
-	margin: 50px auto;
+	margin: 15px auto;
 }
 
 .countries_list {
@@ -8,4 +8,6 @@
 	height: 700px;
 	overflow-y: scroll;
 	text-align: left;
+	border: 1px solid #000;
+	background: aquamarine;
 }

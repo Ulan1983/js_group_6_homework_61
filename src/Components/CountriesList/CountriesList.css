@@ -1,10 +1,10 @@
-.li_countries {
+.p_countries {
 	list-style: none;
-	margin: 10px 0;
+	margin: 8px 0;
 	padding: 5px 15px;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid #000;
 	cursor: pointer;
 }
-.li_countries:hover {
+.p_countries:hover {
 	background: deepskyblue;
 }

@@ -1,0 +1,19 @@
+.country_info {
+	width: 75%;
+	border: 1px solid #000;
+	margin: 0 20px;
+	background: aquamarine;
+}
+
+.img {
+	width: 250px;
+	margin-top: 15px;
+}
+
+.country_info h4 {
+	font-size: 30px;
+}
+
+.country_info p {
+	margin-top: 50px;
+}
